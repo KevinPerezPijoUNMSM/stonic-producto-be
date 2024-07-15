@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>stonic_producto_be.logic</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\stonic-producto-be.data\stonic-producto-be.data.csproj" />
+    <ProjectReference Include="..\stonic-producto-be.model\stonic-producto-be.model.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>stonic_producto_be.API</RootNamespace>
+    <UserSecretsId>33c39a43-43d6-4325-a08e-f6493fd782c1</UserSecretsId>
+    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\stonic-producto-be.logic\stonic-producto-be.logic.csproj" />
+    <ProjectReference Include="..\stonic-producto-be.model\stonic-producto-be.model.csproj" />
+  </ItemGroup>
+
+</Project>
