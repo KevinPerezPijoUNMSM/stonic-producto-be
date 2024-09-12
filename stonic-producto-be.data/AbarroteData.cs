@@ -6,30 +6,27 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace stonic_producto_be.data
 {
-    public class ProductoData
+    public class AbarroteData
     {
         public ReturnValue Registrar(Producto item)
         {
+            string jsonData = JsonConvert.SerializeObject(item);
+
             ReturnValue oReturn = new ReturnValue();
             try
             {
                 using (var cnn = new NpgsqlConnection(HelpData.ConnectionString()))
                 {
-                    using (var cmd = new NpgsqlCommand("gen_man_producto_ins", cnn))
+                    using (var cmd = new NpgsqlCommand("pos_man_abarrote_ins", cnn))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        // Agregar parámetros de entrada
-                        cmd.Parameters.AddWithValue("p_nombre", item.Nombre);
-                        cmd.Parameters.AddWithValue("p_codigo", item.Codigo);
-                        cmd.Parameters.AddWithValue("p_idproductora", item.IdProductora);
-                        cmd.Parameters.AddWithValue("p_contenido", item.Contenido);
-                        cmd.Parameters.AddWithValue("p_idmedida", item.IdMedida);
-                        cmd.Parameters.AddWithValue("p_urlimagen", item.UrlImagen);
-                        cmd.Parameters.AddWithValue("p_flagrevendible", item.flagRevendible);
+                        // Agregar el parámetro de entrada con el JSON serializado
+                        cmd.Parameters.AddWithValue("p_datos", NpgsqlTypes.NpgsqlDbType.Jsonb, jsonData);
 
                         // Agregar parámetros de salida
                         var pMessage = new NpgsqlParameter("p_message", NpgsqlTypes.NpgsqlDbType.Varchar, 200)

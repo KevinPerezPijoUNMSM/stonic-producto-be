@@ -6,12 +6,12 @@ namespace stonic_producto_be.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductoController
+    public class AbarroteController
     {
         [HttpPost]
         public ReturnValue Post([FromBody] Producto item)
         {
-            ProductoLogic oProductoLogic = new ProductoLogic();
+            AbarroteLogic oProductoLogic = new AbarroteLogic();
             return oProductoLogic.Registrar(item);
         }
     }

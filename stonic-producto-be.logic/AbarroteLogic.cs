@@ -3,13 +3,13 @@ using stonic_producto_be.model;
 
 namespace stonic_producto_be.logic
 {
-    public class ProductoLogic
+    public class AbarroteLogic
     {
-        private ProductoData oProductoData;
+        private AbarroteData oProductoData;
 
-        public ProductoLogic()
+        public AbarroteLogic()
         {
-            oProductoData = new ProductoData();
+            oProductoData = new AbarroteData();
         }
 
         public ReturnValue Registrar(Producto item)

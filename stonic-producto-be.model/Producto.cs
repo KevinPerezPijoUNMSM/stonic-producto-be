@@ -2,14 +2,18 @@
 {
     public class Producto : Base
     {
-        public int IdProducto { get; set; }
-        public string Nombre { get; set; }
+        public long IdProducto { get; set; }
+        public string? Nombre { get; set; }
         public string? Codigo { get; set; }
-        public int IdProductora { get; set; }
-        public decimal Contenido { get; set; }
-        public int IdMedida { get; set; }
-        public string UrlImagen { get; set; }
-        public int IdEstado { get; set; }
-        public bool flagRevendible { get; set; }
+        public long IdProductora { get; set; }
+        public string? UrlImagen { get; set; }
+        public bool FlagRevendible { get; set; }
+
+        public List<ProductoCategoriaProducto> ProductoCategoriaProducto { get; set; }
+
+        public List<PaqueteUnidad>? PaqueteUnidad { get; set; }
+
+        public Abarrote? Abarrote { get; set; }
+
     }
 }
